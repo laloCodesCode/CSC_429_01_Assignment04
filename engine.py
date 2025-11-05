@@ -20,7 +20,14 @@ class ForwardChainingEngine:
 
     def can_fire(self, rule: Rule) -> bool:
         """TODO: Return True if all antecedents are true and consequent not yet known."""
-        pass
+        #All the antecedents must be in the facts
+        #Consequent shouldn't already be in the facts
+        if all (cond in self.facts for cond in rule.antecedents):
+            
+            return rule.consequent not in self.facts
+        return False
+        
+        #pass
 
     def run(self) -> None:
         """TODO: Implement the forward chaining loop."""

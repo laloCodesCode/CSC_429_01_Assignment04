@@ -16,6 +16,7 @@ def collect_initial_facts():
 
 def main():
     # TODO: Load rules, create engine, assert facts, and run inference
+    load_rules()
     pass
 
 if __name__ == "__main__":
