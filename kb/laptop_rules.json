@@ -9,14 +9,31 @@
     "then": "recommend:premium_ultrabook",
     "priority": 5
   } ,
+
   {
-    "name": "OS Preference Mapping",
-    "if": ["pref_os_macos"],
-    "then": "spec:macos_required",
-    "priority": 4
-  } , 
+    "name" : "Budget Ultrabook",
+    "if" : [
+      "budget_low", 
+      "office_only",
+      "portable"
+    ],
+    "then" : "recommend:budget_ultrabook",
+    "priority" : 4
+  }, 
+
+  {
+    "name" : "Midrange Gaming Laptop",
+    "if" : [
+      "gaming",
+      "budget_medium"
+    ],
+    "then" : "recommend:midange_gaming_laptop"
+  },
+
   {
     
   }
+
+
 
 ]

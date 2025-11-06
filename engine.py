@@ -15,7 +15,7 @@ class ForwardChainingEngine:
         self.trace: List[Dict[str, Any]] = []
 
     def assert_facts(self, initial: List[str]) -> None:
-        """Store initial facts into the working memory."""
+        """Store initial facts into the working memory."""    
         self.facts.update(initial)
 
 
@@ -45,7 +45,7 @@ class ForwardChainingEngine:
         while fired_any:
             fired_any = False #reset the iterations
 
-            for rule in sorted(self.rules, key = lambda r: r.priority, reverse = true):
+            for rule in sorted(self.rules, key = lambda r: r.priority, reverse = True):
                 if self.can_fire(rule):
                     self.facts.add(rule.consequent)
 
@@ -62,6 +62,15 @@ class ForwardChainingEngine:
     def conclusions(self) -> Dict[str, List[str]]:
         """TODO: Return separated results (recommendations, specs, other facts)."""
         
+        
+        
+        #recommendations = [fact for fact in self.facts if fact.startswith("recommend:")]
+        #specs = [fact for fact in self.facts if fact.startswith("spec:")]
+        #others = [fact for fact in self.facts if not (fact.startswith("recommendations:")or fact.startswith("spec"))]
+        recommendations = [fact for fact in self.facts if fact.startswith("recommend:")]        
+        specs = [fact for fact in self.facts if fact.startswith("spec:")]
+        others = [fact for fact in self.facts
+                  if not (fact.startswith("recommend:") or fact.startswith("spec:"))]
         
         
         
