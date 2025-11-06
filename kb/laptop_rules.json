@@ -27,11 +27,23 @@
       "gaming",
       "budget_medium"
     ],
-    "then" : "recommend:midange_gaming_laptop"
+    "then" : "recommend:midange_gaming_laptop",
+    "priority" : 3
   },
 
   {
-    
+    "name" : "High End Gaming Laptop",
+    "if" : [
+      "gaming", 
+      "budget_high"
+    ],
+    "then" : "recommend:high_end_gaming_laptop",
+    "priority" : 2
+  },
+
+  {
+    "name" :
+
   }
 
 
