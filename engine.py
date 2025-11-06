@@ -18,12 +18,16 @@ class ForwardChainingEngine:
         """Store initial facts into the working memory."""
         self.facts.update(initial)
 
+
+
+
+ 
+    #Implement -> potentuially done
     def can_fire(self, rule: Rule) -> bool:
         """TODO: Return True if all antecedents are true and consequent not yet known."""
         #All the antecedents must be in the facts
         #Consequent shouldn't already be in the facts
         if all (cond in self.facts for cond in rule.antecedents):
-            
             return rule.consequent not in self.facts
         return False
         
@@ -35,8 +39,36 @@ class ForwardChainingEngine:
         #     select one rule (students decide tie-breaking)
         #     add its consequent to facts
         #     record in trace
-        pass
+        
+        fired_any = True
+
+        while fired_any:
+            fired_any = False #reset the iterations
+
+            for rule in sorted(self.rules, key = lambda r: r.priority, reverse = true):
+                if self.can_fire(rule):
+                    self.facts.add(rule.consequent)
+
+                    self.trace.append({
+                        "rule" : rule.name,
+                        "fired" : rule.consequent
+                    })
+
+                    fired_any = True
+                    
+
+       #pass
 
     def conclusions(self) -> Dict[str, List[str]]:
         """TODO: Return separated results (recommendations, specs, other facts)."""
-        pass
+        
+        
+        
+        
+        return {
+            "recommendations" : recommendations,
+            "specs" : specs,
+            "others" : others
+        }
+        
+        #pass
