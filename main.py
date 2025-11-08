@@ -12,6 +12,26 @@ def collect_initial_facts():
         facts.append("long_battery")
     if input("Is your budget high? (y/n): ").lower().startswith("y"):
         facts.append("budget_high")
+    #Started asking my own questions to collect more facts for reasoning
+    if input("Is your budget low? (y/n): ").lower().startswith("y"):
+        facts.append("budget_low")
+        
+    #comeback to this case
+    if input("Is your budget not too high but also not too low (y/n): ").lower().startswith("y"):
+        facts.append("budget_medium")
+    
+    
+    #continue here with fact prompt I like 
+    if input("Do you need AI acceleration or GPU tensor cores? (y/n): ").lower().startswith("y"):
+        facts.append("needs_ai_accel")
+    """Operating System Prefernce"""
+    if input("Do you prefer macOS (y/n): ").lower().startswith("y"):
+        facts.append("prefers_os_macos")
+    elif input("Do you prefer Linux?").lower().startswith('y'):
+        facts.append("prefers_os_linux")
+    """Continuation of the rest of the prompts"""
+    
+        
     return facts
 
 def main():
