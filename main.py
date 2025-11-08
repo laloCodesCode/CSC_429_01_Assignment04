@@ -61,16 +61,7 @@ def main():
     engine.run()
     results = engine.conclusions()
     
-    jkdsfhajksdfhjkdshf
-    sdfsdfsd
-    fsd
-    finallyf
-    sdf
-    sortedsd
-    fsd
-    finallysdf
-    d
-    f
+    
     load_rules()
     #pass
 
