@@ -27,9 +27,27 @@ def collect_initial_facts():
     """Operating System Prefernce"""
     if input("Do you prefer macOS (y/n): ").lower().startswith("y"):
         facts.append("prefers_os_macos")
-    elif input("Do you prefer Linux?").lower().startswith('y'):
+    elif input("Do you prefer Linux? (y/n): ").lower().startswith('y'):
         facts.append("prefers_os_linux")
     """Continuation of the rest of the prompts"""
+    if input("Do you travel often with your laptop? (y/n): ").lower().startswith("y"):
+        facts.append("travel_often")
+    if input("Do you like laptops with a bigger screen? (y/n): ").lower().startswith("y"):
+        facts.append("large_screen")
+    if input("Do you tend to use your laptop for creative work? I.e (video editing, desgin, etc.) (y/n): ").lower().startswith("y"):
+        facts.append("creative_work")
+    if input("Do you game? (y/n): ").lower().startswith("y"):
+        facts.append("gaming")
+    if input("Do you you mainly use your laptop for office or school work? (y/n:) ").lower().startswith("y"):
+        facts.append("office_only")
+        
+        
+        
+
+    #spit out the facts you entered
+    print("\nYou said : ", facts)
+    
+    
     
         
     return facts
