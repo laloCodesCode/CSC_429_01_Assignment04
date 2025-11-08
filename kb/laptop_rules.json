@@ -90,7 +90,7 @@
   },
 
   {
-    "namne" : "Linux Friendly",
+    "name" : "Linux Friendly",
     "if" : [
       "prefers_os_linux", 
       "office_only"

@@ -63,10 +63,16 @@ class ForwardChainingEngine:
         """TODO: Return separated results (recommendations, specs, other facts)."""
         
         
-        
+        """"
+        comeback here might need these 3 lines or not comeback and delete if not needed !
+        """
         #recommendations = [fact for fact in self.facts if fact.startswith("recommend:")]
         #specs = [fact for fact in self.facts if fact.startswith("spec:")]
         #others = [fact for fact in self.facts if not (fact.startswith("recommendations:")or fact.startswith("spec"))]
+        
+        
+        
+        
         recommendations = [fact for fact in self.facts if fact.startswith("recommend:")]        
         specs = [fact for fact in self.facts if fact.startswith("spec:")]
         others = [fact for fact in self.facts
