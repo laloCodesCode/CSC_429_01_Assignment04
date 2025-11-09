@@ -45,7 +45,7 @@ def collect_initial_facts():
         
 
     #spit out the facts you entered
-    #print("\nYou said : ", facts)
+    print("\nYou said : ", facts)
     
     
     
