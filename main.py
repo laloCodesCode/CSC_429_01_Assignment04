@@ -57,9 +57,39 @@ def main():
     engine.run()
     results = engine.conclusions()
 
-    print("\n--- Recomended Laptop Options or the Facts Inferred")
-    for facts in results:
-        print("-", facts)
+    #print("\n--- Recomended Laptop Options or the Facts Inferred")
+    #for facts in results:
+    #    print("-", facts)
 
+    print("DEBUG RESULTS:", results)  # remove after testing
+
+    # If there were no conclusions at all
+    if not results or not results.get("recommendations"):
+        print("> No recommendation could be made.")
+        return
+
+    # Extract the first recommendation
+    raw_conclusion = results["recommendations"][0]  # e.g. "recommend:premium_ultrabook"
+
+    # Strip the "recommend:" prefix
+    if raw_conclusion.startswith("recommend:"):
+        conclusion = raw_conclusion.split("recommend:")[1]
+    else:
+        conclusion = raw_conclusion
+
+    # Determine explanation
+    # Try to match a rule whose consequent matches the recommendation
+    rule_name = None
+    for rule in rules:
+        if rule.consequent == raw_conclusion:
+            rule_name = rule.name
+            break
+
+    print("> Recommendation:", conclusion)
+
+    if rule_name:
+        print(f"> Explanation: derived from rule '{rule_name}'")
+    else:
+        print("> Explanation: based on matched facts.")
 if __name__ == "__main__":
     main()
