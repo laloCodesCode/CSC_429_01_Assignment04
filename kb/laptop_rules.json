@@ -8,97 +8,85 @@
     ],
     "then": "recommend:premium_ultrabook",
     "priority": 5
-  } ,
-
+  },
   {
-    "name" : "Budget Ultrabook",
-    "if" : [
-      "budget_low", 
+    "name": "Budget Ultrabook",
+    "if": [
+      "budget_low",
       "office_only",
       "portable"
     ],
-    "then" : "recommend:budget_ultrabook",
-    "priority" : 4
-  }, 
-
+    "then": "recommend:budget_ultrabook",
+    "priority": 4
+  },
   {
-    "name" : "Midrange Gaming Laptop",
-    "if" : [
+    "name": "Midrange Gaming Laptop",
+    "if": [
       "gaming",
       "budget_medium"
     ],
-    "then" : "recommend:midange_gaming_laptop",
-    "priority" : 3
+    "then": "recommend:midange_gaming_laptop",
+    "priority": 3
   },
-
   {
-    "name" : "High End Gaming Laptop",
-    "if" : [
-      "gaming", 
+    "name": "High End Gaming Laptop",
+    "if": [
+      "gaming",
       "budget_high"
     ],
-    "then" : "recommend:high_end_gaming_laptop",
-    "priority" : 2
+    "then": "recommend:high_end_gaming_laptop",
+    "priority": 2
   },
-
   {
-    "name" : "Creative Work-Portbale",
-    "if" : [
+    "name": "Creative Work-Portbale",
+    "if": [
       "creative_work",
       "portable"
     ],
-    "then" : "spec:ram_16_plus",
-    "priority" : 1
-  }, 
-
+    "then": "spec:ram_16_plus",
+    "priority": 1
+  },
   {
-    "name" :"Creative Work-Display",
-    "if" : [
+    "name": "Creative Work-Display",
+    "if": [
       "creative_work",
       "large_screen"
     ],
-    "then" : "spec:display_15_plus_color_accurate",
-    "priority" : 6
+    "then": "spec:display_15_plus_color_accurate",
+    "priority": 6
   },
-
   {
-    "name" : "Travel + Battery",
-    "if" : [
+    "name": "Travel + Battery",
+    "if": [
       "travel_often",
       "long_battery"
     ],
-    "then" : "spec:battery_60wh_plus",
-    "priority" : 7
+    "then": "spec:battery_60wh_plus",
+    "priority": 7
   },
-
   {
-    "name" : "MacOS Required",
-    "if" : [
+    "name": "MacOS Required",
+    "if": [
       "prefers_os_macos"
     ],
-    "then" : "spec:macos_required",
-    "priority" : 8
+    "then": "spec:macos_required",
+    "priority": 8
   },
-
   {
-    "name" : "AI acceleration",
-    "if" : [
+    "name": "AI acceleration",
+    "if": [
       "needs_ai_accel"
     ],
-    "then" : "spec:gpu_with_tensor_cores",
-    "priority" : 9
+    "then": "spec:gpu_with_tensor_cores",
+    "priority": 9
   },
-
   {
-    "name" : "Linux Friendly",
-    "if" : [
-      "prefers_os_linux", 
+    "name": "Linux Friendly",
+    "if": [
+      "prefers_os_linux",
       "office_only"
     ],
-    "then" : "spec:linux_friendly_hw",
-    "priority" : 10
+    "then": "spec:linux_friendly_hw",
+    "priority": 10
   }
-
-
-
 ]

@@ -1,7 +1,9 @@
+import engine
 from kb_loader import load_rules
 from engine import ForwardChainingEngine
 
 KB_PATH = "kb/laptop_rules.json"
+
 
 def collect_initial_facts():
     facts = []
@@ -12,16 +14,15 @@ def collect_initial_facts():
         facts.append("long_battery")
     if input("Is your budget high? (y/n): ").lower().startswith("y"):
         facts.append("budget_high")
-    #Started asking my own questions to collect more facts for reasoning
+    # Started asking my own questions to collect more facts for reasoning
     if input("Is your budget low? (y/n): ").lower().startswith("y"):
         facts.append("budget_low")
-        
-    #comeback to this case
+
+    # comeback to this case
     if input("Is your budget not too high but also not too low (y/n): ").lower().startswith("y"):
         facts.append("budget_medium")
-    
-    
-    #continue here with fact prompt I like 
+
+    # continue here with fact prompt I like
     if input("Do you need AI acceleration or GPU tensor cores? (y/n): ").lower().startswith("y"):
         facts.append("needs_ai_accel")
     """Operating System Prefernce"""
@@ -40,30 +41,25 @@ def collect_initial_facts():
         facts.append("gaming")
     if input("Do you you mainly use your laptop for office or school work? (y/n:) ").lower().startswith("y"):
         facts.append("office_only")
-        
-        
-        
 
-    #spit out the facts you entered
+    # spit out the facts you entered
     print("\nYou said : ", facts)
-    
-    
-    
-        
+
     return facts
+
 
 def main():
     # TODO: Load rules, create engine, assert facts, and run inference
     rules = load_rules(KB_PATH)
     engine = ForwardChainingEngine(rules)
-    initial_facts = collect_initial_facts()
-    engine.assert_facts(initial_facts)
+    intial_facts = collect_initial_facts()
+    engine.assert_facts(intial_facts)
     engine.run()
     results = engine.conclusions()
-    
-    
-    load_rules()
-    #pass
+
+    print("\n--- Recomended Laptop Options or the Facts Inferred")
+    for facts in results:
+        print("-", facts)
 
 if __name__ == "__main__":
     main()
