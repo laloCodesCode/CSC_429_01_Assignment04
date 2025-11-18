@@ -29,7 +29,7 @@ def collect_initial_facts():
     if input("Do you prefer macOS (y/n): ").lower().startswith("y"):
         facts.append("prefers_os_macos")
     elif input("Do you prefer Linux? (y/n): ").lower().startswith('y'):
-        facts.append("prefers_os_linux")
+        facts.append("prefers_os_linux") 
     """Continuation of the rest of the prompts"""
     if input("Do you travel often with your laptop? (y/n): ").lower().startswith("y"):
         facts.append("travel_often")
@@ -45,13 +45,6 @@ def collect_initial_facts():
     #spit out the facts you entered for debugging
     #print("\nYou said : ", facts)
     print("\n\n")
-
-
-
-
-
-
-
 
     return facts
 

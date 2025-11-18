@@ -38,20 +38,13 @@ Expected Output:
 Test 3:
 
 Prompt:
-      
+      Is portability important? Y 
+      Do you need AI acceleration or GPU tensor cores? Y
+      Do you tend to use your laptop for creative work? I.e (video editing, desgin, etc.) ? Y 
+      Do you you mainly use your laptop for office or school work? Y
+Expected Output:
+      >No recommendation could be made.
 
 
 
 
-Test 4:
-
-
-
-
-
-
-
-
-
-
-Test 5:

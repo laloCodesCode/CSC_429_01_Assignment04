@@ -21,7 +21,7 @@ class ForwardChainingEngine:
 
 
 
- 
+
     #Implement -> potentuially done
     def can_fire(self, rule: Rule) -> bool:
         """TODO: Return True if all antecedents are true and consequent not yet known."""
@@ -31,7 +31,7 @@ class ForwardChainingEngine:
             return rule.consequent not in self.facts
         return False
         
-        #pass
+
 
     def run(self) -> None:
         """TODO: Implement the forward chaining loop."""
@@ -57,7 +57,7 @@ class ForwardChainingEngine:
                     fired_any = True
                     
 
-       #pass
+
 
     def conclusions(self) -> Dict[str, List[str]]:
         """TODO: Return separated results (recommendations, specs, other facts)."""
@@ -86,4 +86,4 @@ class ForwardChainingEngine:
             "others" : others
         }
         
-        #pass
+
