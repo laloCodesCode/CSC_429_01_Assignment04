@@ -208,3 +208,6 @@ __marimo__/
 
 #Annoying System File
 .DS_Store
+
+#.idea file 
+.idea
