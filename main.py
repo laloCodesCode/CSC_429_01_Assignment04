@@ -42,9 +42,6 @@ def collect_initial_facts():
     if input("Do you you mainly use your laptop for office or school work? (y/n:) ").lower().startswith("y"):
         facts.append("office_only")
 
-    #spit out the facts you entered for debugging
-    #print("\nYou said : ", facts)
-    print("\n\n")
 
     return facts
 
@@ -59,36 +56,33 @@ def main():
     results = engine.conclusions()
 
 
-    #Debug 
-    #print("DEBUG RESULTS:", results)
-
     #If combination of rules cannot lead to recommendation
     if not results or not results.get("recommendations"):
-        print("> No recommendation could be made.")
+        print("=> No recommendation could be made.")
         return
 
     # Extract the first recommendation for accuracy purposes
     raw_conclusion = results["recommendations"][0]
 
-
+    #strip
     if raw_conclusion.startswith("recommend:"):
         conclusion = raw_conclusion.split("recommend:")[1]
     else:
         conclusion = raw_conclusion
 
-
+    #Explanation that gets fired to the User
     rule_name = None
     for rule in rules:
         if rule.consequent == raw_conclusion:
             rule_name = rule.name
             break
 
-    print("> Recommendation:", conclusion)
+    print("=> Recommendation:", conclusion)
 
     if rule_name:
-        print(f"> Explanation: derived from rule '{rule_name}'")
+        print(f"=> Explanation: derived from rule '{rule_name}'")
     else:
-        print("> Explanation: based on matched facts.")
+        print("=> Explanation: based on matched facts.")
         
         
         
