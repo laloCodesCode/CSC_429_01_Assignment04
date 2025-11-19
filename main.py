@@ -44,7 +44,7 @@ def collect_initial_facts():
 
 
 
-    print("\n\n")
+    print("\n\n\n") 
 
     return facts
 
