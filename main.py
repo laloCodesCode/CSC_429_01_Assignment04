@@ -43,6 +43,9 @@ def collect_initial_facts():
         facts.append("office_only")
 
 
+
+    print("\n\n")
+
     return facts
 
 
